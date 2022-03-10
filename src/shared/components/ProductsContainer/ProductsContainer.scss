@@ -1,0 +1,38 @@
+@import '../../../styles/styles/style';
+
+.products {
+
+   &__namesection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 0;
+
+   }
+
+   &__container {
+   }
+
+   &__wrapper {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+   }
+}
+
+.conteinerlivesearch{
+   @media (max-width:$md4+px){
+      flex-direction: column;
+   }
+}
+
+.namesection{
+   &__name{
+      @media (max-width:$md4+px){
+          margin: 0px 0px 30px 0px; 
+      }
+   }
+}

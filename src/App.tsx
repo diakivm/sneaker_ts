@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./pages/header/Header";
+import Footer from "./pages/footer/Footer";
+import AppRoutes from "./router/AppRoutes";
+import 'antd/dist/antd.css';
+import {useAction} from "./hooks/useAction";
+
 
 function App() {
+
+    const {login} = useAction()
+
+    React.useEffect(() => {
+        if(localStorage.username && localStorage.password)
+            login(localStorage.username, localStorage.password)
+    },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper _container">
+      <Header/>
+         <div className="page">
+             <AppRoutes/>
+         </div>
+      <Footer/>
     </div>
   );
 }

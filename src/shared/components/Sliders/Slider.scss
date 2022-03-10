@@ -1,0 +1,14 @@
+@import "../../../styles/styles/mixins";
+@import "../../../styles/styles/style";
+
+.swiper {
+
+   &__iteam {
+      @include adaptiv-value("min-height", 350, 150, 1 );
+     border-radius: 15px;
+   }
+
+   &__img {
+      border-radius: 15px;
+   }
+}
